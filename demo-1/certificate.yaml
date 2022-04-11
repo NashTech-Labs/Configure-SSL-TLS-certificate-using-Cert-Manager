@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: self-signed-certificate
+  namespace: demo-1
+spec:
+  commonName:  # Enter your domain/sub-domain here, Ex: example.com, prod.example.com, it should match with certificate.yaml
+  secretName: mywebapp-self
+  dnsNames:
+    -  # Enter your domain/sub-domain here, Ex: example.com, prod.example.com, it should match with certificate.yaml
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
