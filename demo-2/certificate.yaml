@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: webapp
+  namespace: demo-2
+spec:
+  commonName: # Enter your domain/sub-domain here, Ex: example.com, prod.example.com
+  secretName: webapp-secret
+  dnsNames:
+    - # Enter your domain/sub-domain here, Ex: example.com, prod.example.com
+  issuerRef:
+    name: letsencrypt-stg
+    kind: ClusterIssuer
